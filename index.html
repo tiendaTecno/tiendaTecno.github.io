@@ -7,19 +7,25 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
 		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Tienda</title>
 		<link rel="stylesheet" href="styles.css" />
-	</head>
-	<body>
-		<figure>
-					<img
+		<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+    </head>
+<body>
+		<div class="divbarra" >
+		 <h1 class="titulotienda" > Tecno Tienda </h1>
+        </div>
+	     <figure>
+				<img img class="tamico"
 						src="img/logos/Logo Esferas.png" width="150" height="150"/>
-				</figure>
+	            </figure>
 		<header>
 			
-			<h1 class="titulotienda" > Tecno Tienda </h1>
-
+			
+                 
 			<div class="container-icon">
+				
 				<div class="container-cart-icon">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -28,15 +34,18 @@
 						stroke-width="1.5"
 						stroke="currentColor"
 						class="icon-cart"
+						
 					>
 						<path
 							stroke-linecap="round"
 							stroke-linejoin="round"
+							  
 							d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
 						/>
 					</svg>
+					
 					<div class="count-products">
-						<span id="contador-productos">0</span>
+						<span id="contador-productos" >0</span>
 					</div>
 				</div>
 
@@ -76,7 +85,7 @@
 		<div class="container-items">
 			<div class="item">
 				<figure>
-					<img
+					<img class="tamimg"
 						src="img/Audifonos/Audifonos Celebra/TSW-W27/Fondo.png"
 						alt="producto"
 					/>
@@ -90,7 +99,7 @@
 			
 			<div class="item">
 				<figure>
-					<img
+					<img class="tamimg"
 						src="img/Audifonos/Audifonos Celebra/TWS-W13/Fondo.png"
 						alt="producto"
 					/>
@@ -104,7 +113,7 @@
 			
 			<div class="item">
 				<figure>
-					<img
+					<img class="tamimg"
 						src="img/Audifonos/Audifonos Celebra/TWS-W22/Fondo.png"
 						alt="producto"
 					/>
@@ -117,7 +126,7 @@
 			</div>
 			<div class="item">
 				<figure>
-					<img
+					<img class="tamimg"
 						src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1099&q=80"
 						alt="producto"
 					/>
@@ -143,7 +152,7 @@
 			</div>
 			<div class="item">
 				<figure>
-					<img
+					<img class="tamimg"
 						src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
 						alt="producto"
 					/>
@@ -156,6 +165,9 @@
 			</div>
 		</div>
 
-		<script src="index.js"></script>
+<script src="index.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap-4.4.1.js"></script>
 	</body>
 </html>

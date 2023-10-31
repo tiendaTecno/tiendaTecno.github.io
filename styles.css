@@ -41,8 +41,30 @@ header{
 	font-style: oblique;
 	font-variant-position:sub;
 	border-bottom-style:double;
-	color: #1349D9;
-	position:static
+	color: white;
+	position:relative;
+	
+}
+
+.tamimg{
+	width:100%;
+	height:auto;
+	
+}
+.tamico{
+	
+	width:20%;
+	height:auto;
+}
+
+.divbarra{
+	background-color: dimgray;
+	border-bottom-color: dimgray;
+	
+	width: 100%;
+	height: 70px;
+	text-align: center;
+	
 	
 }
 
@@ -51,8 +73,9 @@ header{
 }
 
 .count-products{
-    position: absolute;
+    position:absolute;
     top: 55%;
+	
     right: 0;
 
     background-color: #000;
@@ -62,7 +85,7 @@ header{
 
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items:center;
     border-radius: 50%;
 }
 
@@ -118,6 +141,9 @@ header{
     width: 25px;
     height: 25px;
 }
+
+
+
 
 .icon-close:hover{
     stroke: red;
