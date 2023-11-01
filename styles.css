@@ -1,20 +1,21 @@
-/* Globales */
-*::after,
-*::before,
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@charset "utf-8";
+
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    
+    font-family:Pocket Calculator;
 }
 
-body{
-    margin: 0 auto;
-    max-width: 1200px;
-    font-family: 'Lato';
-    color: #333;
-}
 
-.icon-cart{
+@media screen and (orientation: landscape) {
+.bodyform {
+   /* background-color: green;*/
+}
+	
+	.icon-cart{
     width: 70%;
     height: 70%;
     stroke: #000;
@@ -27,7 +28,7 @@ body{
 .Barra{
 	background-color: dimgrey;
 	width: 100%;
-	max-width: 1200px;
+	
 	height: auto;
    
    
@@ -237,3 +238,10 @@ header{
 .hidden{
     display: none;
 }
+
+	
+	
+}
+
+
+
