@@ -26,17 +26,28 @@ body{
 
 .Barra{
 	background-color: dimgrey;
-	width: 100%;
+	width: auto;
 	height: auto;
-    max-width: 1200px;
+   
    
 	
 	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-	font-size: 200%;
+	font-size: 300%;
 	color: white;
 	align-content: center;
 	text-align: center;
 	text-decoration-line:underline;
+}
+
+.btn-add-cart{
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	font-size: 150%;
+	font-weight: 100;
+	border-bottom-color: red;
+	
+}
+.Subtitulos{
+	align-content: center;
 }
 
 
@@ -62,14 +73,12 @@ header{
 
 .count-products{
     position: absolute;
-    top: 55%;
-    right: 0;
-
+    top: 128px;
+    right: 17px;
     background-color: #000;
     color: #fff;
-    width: 50%;
+    width: 201px;
     height: 50%;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -207,7 +216,7 @@ header{
 .info-product button{
     border: none;
     background: none;
-    background-color: #000;
+    background-color: #BB2C2E;
     color: #fff;
     padding: 15px 10px;
     cursor: pointer;
