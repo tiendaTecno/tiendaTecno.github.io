@@ -26,8 +26,8 @@ body{
 
 .Barra{
 	background-color: dimgrey;
-	width: auto;
-	height: auto;
+	width: 1200px;
+	height: 200px;
    
    
 	
@@ -40,14 +40,17 @@ body{
 }
 
 .btn-add-cart{
-	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
 	font-size: 150%;
 	font-weight: 100;
 	border-bottom-color: red;
 	
 }
 .Subtitulos{
-	align-content: center;
+	font-size: 600%;
+	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+	color:gray;
+	font-weight: 800;
 }
 
 
@@ -73,14 +76,14 @@ header{
 
 .count-products{
     position: absolute;
-    top: 128px;
-    right: 17px;
+    top: 70%;
+    right: 0%;
     background-color: #000;
     color: #fff;
-    width: 201px;
+    width: 50%;
     height: 50%;
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
     border-radius: 50%;
 	
@@ -92,11 +95,11 @@ header{
 
 .container-cart-products{
     position: absolute;
-    top: 50px;
+    top: 100%;
     right: 0;
 
     background-color: #fff;
-    width: 400px;
+    width: 100%;
     z-index: 1;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
     border-radius: 10px;
@@ -120,23 +123,23 @@ header{
 }
 
 .titulo-producto-carrito{
-    font-size: 20px;
+    font-size: 30%;
 }
 
 .precio-producto-carrito{
     font-weight: 700;
     font-size: 20px;
-    margin-left: 10px;
+    margin-left: 30%;
 }
 
 .cantidad-producto-carrito{
     font-weight: 400;
-    font-size: 20px;
+    font-size: 30%;
 }
 
 .icon-close{
-    width: 25px;
-    height: 25px;
+    width: 20%;
+    height: 20%;
 }
 
 .icon-close:hover{
@@ -153,12 +156,12 @@ header{
 }
 
 .cart-total h3{
-    font-size: 20px;
+    font-size: 20%;
     font-weight: 700;
 }
 
 .total-pagar{
-    font-size: 20px;
+    font-size: 20%;
     font-weight: 900;
 }
 
