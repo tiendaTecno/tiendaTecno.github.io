@@ -48,6 +48,9 @@ body{
 }
 .Subtitulos{
 	align-content: center;
+	color:gray;
+	font-weight: 600;
+	font-size: 500%;
 }
 
 
