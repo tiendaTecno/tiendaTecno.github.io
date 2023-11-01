@@ -15,8 +15,8 @@ body{
 }
 
 .icon-cart{
-    width: 40px;
-    height: 40px;
+    width: 70%;
+    height: 70%;
     stroke: #000;
 }
 
@@ -32,7 +32,7 @@ body{
    
 	
 	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-	font-size: 100%;
+	font-size: 200%;
 	color: white;
 	align-content: center;
 	text-align: center;
@@ -67,17 +67,18 @@ header{
 
     background-color: #000;
     color: #fff;
-    width: 25px;
-    height: 25px;
+    width: 50%;
+    height: 50%;
 
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+	
 }
 
 #contador-productos{
-    font-size: 12px;
+    font-size: 400%;
 }
 
 .container-cart-products{
