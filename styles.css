@@ -32,7 +32,7 @@ body{
    
 	
 	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-	font-size: 300%;
+	font-size: 70px;
 	color: white;
 	align-content: center;
 	text-align: center;
@@ -71,7 +71,9 @@ header{
 }
 
 .container-icon{
-    position: relative;
+    position:relative;
+	align-items: flex-end;
+	text-align-last: right;
 }
 
 .count-products{
@@ -123,7 +125,7 @@ header{
 }
 
 .titulo-producto-carrito{
-    font-size: 150%;
+    font-size: 200px;
 }
 
 .precio-producto-carrito{
