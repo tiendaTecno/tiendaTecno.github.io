@@ -13,6 +13,12 @@ const rowProduct = document.querySelector('.row-product');
 
 // Lista de todos los contenedores de productos
 const productsList = document.querySelector('.container-items');
+const productsListI = document.querySelector('.container-itemsI');
+const productsListII = document.querySelector('.container-itemsparlante');
+const productsListradio = document.querySelector('.container-itemsreadio');
+const productsListtostador = document.querySelector('.container-itemstosatador');
+
+
 
 // Variable de arreglos de Productos
 let allProducts = [];
@@ -24,7 +30,9 @@ const countProducts = document.querySelector('#contador-productos');
 const cartEmpty = document.querySelector('.cart-empty');
 const cartTotal = document.querySelector('.cart-total');
 
-productsList.addEventListener('click', e => {
+
+function intolistener(e){//funcion para el click atrapa classes
+	console.log(e.target.classList);
 	if (e.target.classList.contains('btn-add-cart')) {
 		const product = e.target.parentElement;
 
@@ -54,7 +62,35 @@ productsList.addEventListener('click', e => {
 
 		showHTML();
 	}
+}
+
+productsList.addEventListener('click', e => {
+	intolistener(e);
+	
 });
+productsListI.addEventListener('click', e => {
+	intolistener(e);
+	
+});
+
+productsListII.addEventListener('click', e => {
+	intolistener(e);
+	
+});
+
+productsListradio.addEventListener('click', e => {
+	intolistener(e);
+	
+});
+
+
+productsListtostador.addEventListener('click', e => {
+	intolistener(e);
+	
+});
+
+
+
 
 rowProduct.addEventListener('click', e => {
 	if (e.target.classList.contains('icon-close')) {

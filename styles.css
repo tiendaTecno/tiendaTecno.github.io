@@ -182,6 +182,42 @@ header{
   
 }
 
+.container-itemsI{
+      display: flex;
+	width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+	align-content: flex-start;
+  
+}
+
+.container-itemsparlante{
+      display: flex;
+	width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+	align-content: flex-start;
+  
+}
+
+.container-itemsreadio{
+      display: flex;
+	width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+	align-content: flex-start;
+  
+}
+
+.container-itemstosatador{
+      display: flex;
+	width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+	align-content: flex-start;
+  
+}
+
 .item{
     border-radius: 10px;
 }
