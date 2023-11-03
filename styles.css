@@ -25,18 +25,16 @@ body{
 }
 
 .Barra{
-	background-color: dimgrey;
-	width: 1500px;
-	height: 400px;
-   
-   
-	
-	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-	font-size: 300%;
-	color: white;
-	align-content: center;
-	text-align: center;
-	text-decoration-line:underline;
+    background-color: dimgrey;
+    width: 1500px;
+    height: 400px;
+    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+    font-size: 300%;
+    color: white;
+    align-content: center;
+    text-align: center;
+    text-decoration-line: underline;
+    border-bottom-style: dotted;
 }
 
 .btn-add-cart{
