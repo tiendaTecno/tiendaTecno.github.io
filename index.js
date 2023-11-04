@@ -23,6 +23,8 @@ const productsListcafete = document.querySelector('.container-itemscafete');
 const productsListcocigas = document.querySelector('.container-itemscocigas');
 const productsListmesa = document.querySelector('.container-itemsmesa');
 const productsListsilla = document.querySelector('.container-itemssilla');
+const productsListVenti = document.querySelector('.container-itemsVenti');
+const productsListcocigascasa = document.querySelector('.container-itemscocigascasa');
 
 
 // Variable de arreglos de Productos
@@ -121,6 +123,16 @@ productsListmesa.addEventListener('click', e => {
 })
 
 productsListsilla.addEventListener('click', e => {
+	intolistener(e);
+	
+})
+
+productsListVenti.addEventListener('click', e => {
+	intolistener(e);
+	
+})
+
+productsListcocigascasa.addEventListener('click', e => {
 	intolistener(e);
 	
 })
