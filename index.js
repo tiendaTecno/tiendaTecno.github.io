@@ -17,7 +17,12 @@ const productsListI = document.querySelector('.container-itemsI');
 const productsListII = document.querySelector('.container-itemsparlante');
 const productsListradio = document.querySelector('.container-itemsreadio');
 const productsListtostador = document.querySelector('.container-itemstosatador');
-
+const productsListollapre = document.querySelector('.container-itemsollaspr');
+const productsListollarroc = document.querySelector('.container-itemsarroc');
+const productsListcafete = document.querySelector('.container-itemscafete');
+const productsListcocigas = document.querySelector('.container-itemscocigas');
+const productsListmesa = document.querySelector('.container-itemsmesa');
+const productsListsilla = document.querySelector('.container-itemssilla');
 
 
 // Variable de arreglos de Productos
@@ -89,7 +94,36 @@ productsListtostador.addEventListener('click', e => {
 	
 });
 
+productsListollapre.addEventListener('click', e => {
+	intolistener(e);
+	
+});
 
+
+productsListollarroc.addEventListener('click', e => {
+	intolistener(e);
+	
+})
+
+productsListcafete.addEventListener('click', e => {
+	intolistener(e);
+	
+})
+
+productsListcocigas.addEventListener('click', e => {
+	intolistener(e);
+	
+})
+
+productsListmesa.addEventListener('click', e => {
+	intolistener(e);
+	
+})
+
+productsListsilla.addEventListener('click', e => {
+	intolistener(e);
+	
+})
 
 
 rowProduct.addEventListener('click', e => {
