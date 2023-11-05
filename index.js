@@ -25,7 +25,7 @@ const productsListmesa = document.querySelector('.container-itemsmesa');
 const productsListsilla = document.querySelector('.container-itemssilla');
 const productsListVenti = document.querySelector('.container-itemsVenti');
 const productsListcocigascasa = document.querySelector('.container-itemscocigascasa');
-
+const productsListplancgas = document.querySelector('.container-itemsplancgas');
 
 // Variable de arreglos de Productos
 let allProducts = [];
@@ -138,6 +138,12 @@ productsListcocigascasa.addEventListener('click', e => {
 })
 
 
+productsListplancgas.addEventListener('click', e => {
+	intolistener(e);
+	
+})
+
+
 rowProduct.addEventListener('click', e => {
 	if (e.target.classList.contains('icon-close')) {
 		const product = e.target.parentElement;
@@ -200,10 +206,10 @@ const showHTML = () => {
 		rowProduct.append(containerProduct);
 
 		total =
-			total + parseInt(product.quantity * product.price.slice(1));
+			total + parseInt(product.quantity * product.price.slice(2));
 		totalOfProducts = totalOfProducts + product.quantity;
 	});
 
-	valorTotal.innerText = `$${total}`;
+	valorTotal.innerText = `c$${total}`;
 	countProducts.innerText = totalOfProducts;
 };
