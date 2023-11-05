@@ -26,6 +26,7 @@ const productsListsilla = document.querySelector('.container-itemssilla');
 const productsListVenti = document.querySelector('.container-itemsVenti');
 const productsListcocigascasa = document.querySelector('.container-itemscocigascasa');
 const productsListplancgas = document.querySelector('.container-itemsplancgas');
+const productsListsmartv = document.querySelector('.container-itemssmarttv');
 
 // Variable de arreglos de Productos
 let allProducts = [];
@@ -139,6 +140,11 @@ productsListcocigascasa.addEventListener('click', e => {
 
 
 productsListplancgas.addEventListener('click', e => {
+	intolistener(e);
+	
+})
+
+productsListsmartv.addEventListener('click', e => {
 	intolistener(e);
 	
 })
