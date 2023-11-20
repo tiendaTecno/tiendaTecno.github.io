@@ -30,6 +30,8 @@ const productsListsmartv = document.querySelector('.container-itemssmarttv');
 const productsListspicat = document.querySelector('.container-itemspicat');
 const productsListninos = document.querySelector('.container-itemsninos');
 const productsListlicua = document.querySelector('.container-itemslicua');
+const productsListlamp = document.querySelector('.container-itemslamp');
+const productsListrasura = document.querySelector('.container-itemsrasura');
 
 
 // Variable de arreglos de Productos
@@ -164,6 +166,18 @@ productsListninos.addEventListener('click', e => {
 })
 
 productsListlicua.addEventListener('click', e => {
+	intolistener(e);
+	
+})
+
+
+productsListlamp .addEventListener('click', e => {
+	intolistener(e);
+	
+})
+
+
+productsListrasura .addEventListener('click', e => {
 	intolistener(e);
 	
 })
