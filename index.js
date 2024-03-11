@@ -1,7 +1,5 @@
 const btnCart = document.querySelector('.container-cart-icon');
-const containerCartProducts = document.querySelector(
-	'.container-cart-products'
-);
+const containerCartProducts = document.querySelector('.container-cart-products');
 
 btnCart.addEventListener('click', () => {
 	containerCartProducts.classList.toggle('hidden-cart');
@@ -17,6 +15,7 @@ const productsListI = document.querySelector('.container-itemsI');
 const productsListII = document.querySelector('.container-itemsparlante');
 const productsListradio = document.querySelector('.container-itemsreadio');
 const productsListtostador = document.querySelector('.container-itemstosatador');
+const productsListlavadora = document.querySelector('.container-itemslavadoras');
 const productsListollapre = document.querySelector('.container-itemsollaspr');
 const productsListollarroc = document.querySelector('.container-itemsarroc');
 const productsListcafete = document.querySelector('.container-itemscafete');
@@ -32,7 +31,7 @@ const productsListninos = document.querySelector('.container-itemsninos');
 const productsListlicua = document.querySelector('.container-itemslicua');
 const productsListlamp = document.querySelector('.container-itemslamp');
 const productsListrasura = document.querySelector('.container-itemsrasura');
-
+const productsListMcoser = document.querySelector('.container-itemsMcoser');
 
 // Variable de arreglos de Productos
 let allProducts = [];
@@ -96,6 +95,20 @@ productsListradio.addEventListener('click', e => {
 	intolistener(e);
 	
 });
+
+
+productsListlavadora.addEventListener('click', e => {
+	intolistener(e);
+	
+});
+
+
+productsListMcoser.addEventListener('click', e => {
+	intolistener(e);
+	
+});
+
+
 
 
 productsListtostador.addEventListener('click', e => {
