@@ -1,477 +1,267 @@
-@charset "utf-8";
+const btnCart = document.querySelector('.container-cart-icon');
+const containerCartProducts = document.querySelector('.container-cart-products');
+
+btnCart.addEventListener('click', () => {
+	containerCartProducts.classList.toggle('hidden-cart');
+});
+
+/* ========================= */
+const cartInfo = document.querySelector('.cart-product');
+const rowProduct = document.querySelector('.row-product');
+
+// Lista de todos los contenedores de productos
+const productsList = document.querySelector('.container-items');
+const productsListI = document.querySelector('.container-itemsI');
+const productsListII = document.querySelector('.container-itemsparlante');
+const productsListradio = document.querySelector('.container-itemsreadio');
+const productsListtostador = document.querySelector('.container-itemstosatador');
+const productsListlavadora = document.querySelector('.container-itemslavadoras');
+const productsListollapre = document.querySelector('.container-itemsollaspr');
+const productsListollarroc = document.querySelector('.container-itemsarroc');
+const productsListcafete = document.querySelector('.container-itemscafete');
+const productsListcocigas = document.querySelector('.container-itemscocigas');
+const productsListmesa = document.querySelector('.container-itemsmesa');
+const productsListsilla = document.querySelector('.container-itemssilla');
+const productsListVenti = document.querySelector('.container-itemsVenti');
+const productsListcocigascasa = document.querySelector('.container-itemscocigascasa');
+const productsListplancgas = document.querySelector('.container-itemsplancgas');
+const productsListsmartv = document.querySelector('.container-itemssmarttv');
+const productsListspicat = document.querySelector('.container-itemspicat');
+const productsListninos = document.querySelector('.container-itemsninos');
+const productsListlicua = document.querySelector('.container-itemslicua');
+const productsListlamp = document.querySelector('.container-itemslamp');
+const productsListrasura = document.querySelector('.container-itemsrasura');
+const productsListMcoser = document.querySelector('.container-itemsMcoser');
+
+// Variable de arreglos de Productos
+let allProducts = [];
+
+const valorTotal = document.querySelector('.total-pagar');
+
+const countProducts = document.querySelector('#contador-productos');
+
+const cartEmpty = document.querySelector('.cart-empty');
+const cartTotal = document.querySelector('.cart-total');
 
 
+function intolistener(e){//funcion para el click atrapa classes
+	console.log(e.target.classList);
+	if (e.target.classList.contains('btn-add-cart')) {
+		const product = e.target.parentElement;
 
-* {
-    margin: 0px;
-    padding: 0px;
-    
-    font-family:Pocket Calculator;
+		const infoProduct = {
+			quantity: 1,
+			title: product.querySelector('h2').textContent,
+			price: product.querySelector('p').textContent,
+		};
+
+		const exits = allProducts.some(
+			product => product.title === infoProduct.title
+		);
+
+		if (exits) {
+			const products = allProducts.map(product => {
+				if (product.title === infoProduct.title) {
+					product.quantity++;
+					return product;
+				} else {
+					return product;
+				}
+			});
+			allProducts = [...products];
+		} else {
+			allProducts = [...allProducts, infoProduct];
+		}
+
+		showHTML();
+	}
 }
 
-
-@media screen and (orientation: landscape) {
-.bodyform {
-   /* background-color: green;*/
-}
+productsList.addEventListener('click', e => {
+	intolistener(e);
 	
-	.icon-cart{
-    width: 70%;
-    height: 70%;
-    stroke: #000;
-}
-
-.icon-cart:hover{
-    cursor: pointer;
-}
-
-.Barra{
-	background-color: dimgrey;
-	width: 100%;
+});
+productsListI.addEventListener('click', e => {
+	intolistener(e);
 	
-	height: auto;
-   
-   
+});
+
+productsListII.addEventListener('click', e => {
+	intolistener(e);
 	
-	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-	font-size: 70px;
-	color: white;
-	align-content: center;
-	text-align: center;
-	text-decoration-line:underline;
-}
+});
 
-.btn-add-cart{
-	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
-	font-size: 150%;
-	font-weight: 100;
-	border-bottom-color: red;
+productsListradio.addEventListener('click', e => {
+	intolistener(e);
 	
-}
-.Subtitulos{
-	font-size: 500%;
-	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
-	color:gray;
-	font-weight: 800;
-}
+});
 
 
-.magenpro{
-	width: 100%;
-	height: 100%;
-}
-
-img{
-    max-width: 100%;
-}
-
-/* Header */
-header{
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 0 40px 0;
-}
-
-.container-icon{
-    position:relative;
-	align-items: flex-end;
-	text-align-last: right;
-}
-
-.count-products{
-    position: absolute;
-    top: 70%;
-    right: 0%;
-    background-color: #000;
-    color: #fff;
-    width: 50%;
-    height: 50%;
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    border-radius: 50%;
+productsListlavadora.addEventListener('click', e => {
+	intolistener(e);
 	
-}
-
-#contador-productos{
-    font-size: 400%;
-}
-
-.container-cart-products{
-    position: absolute;
-    top: 100%;
-    right: 0;
-
-    background-color: #fff;
-    width: 150%;
-    z-index: 1;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
-    border-radius: 10px;
-    
-}
-
-.cart-product{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 30px;
-
-    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
-
-}
-
-.info-cart-product{
-    display: flex;
-    justify-content: space-between;
-    flex: 0.8;
-}
-
-.titulo-producto-carrito{
-    font-size: 200px;
-}
-
-.precio-producto-carrito{
-    font-weight: 700;
-    font-size: 30px;
-    margin-left: 30%;
-}
-
-.cantidad-producto-carrito{
-    font-weight: 400;
-    font-size: 150%;
-}
-
-.icon-close{
-    width: 10%;
-    height: 10%;
-}
-
-.icon-close:hover{
-    stroke: red;
-    cursor: pointer;
-}
-
-.cart-total{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-    gap: 20px;
-}
-
-.cart-total h3{
-    font-size: 200%;
-    font-weight: 700;
-}
-
-.total-pagar{
-    font-size: 200%;
-    font-weight: 900;
-}
-
-.hidden-cart{
-    display: none;
-}
+});
 
 
-
-
-/* Main */
-.container-items{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.item{
-    border-radius: 10px;
-}
-
-.item:hover{
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
-}
-
-.item img{
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-    transition: all .5s;
-}
-
-.item figure{
-    overflow: hidden;
-}
-
-.item:hover img{
-    transform: scale(1.2);
-}
-
-.info-product{
-    padding: 15px 30px;
-    line-height: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.price{
-    font-size: 18px;
-    font-weight: 900;
-}
-
-.info-product button{
-    border: none;
-    background: none;
-    background-color: #BB2C2E;
-    color: #fff;
-    padding: 15px 10px;
-    cursor: pointer;
-}
-
-.cart-empty{
-    padding: 20px;
-    text-align: center;
-}
-
-
-.hidden{
-    display: none;
-}
-
+productsListMcoser.addEventListener('click', e => {
+	intolistener(e);
 	
+});
+
+
+
+
+productsListtostador.addEventListener('click', e => {
+	intolistener(e);
 	
-}
+});
 
-
-@media screen and (orientation: portrait) {
-.bodyform {
-   /* background-color: green;*/
-}
+productsListollapre.addEventListener('click', e => {
+	intolistener(e);
 	
-	.icon-cart{
-    width: 70%;
-    height: 70%;
-    stroke: #000;
-}
+});
 
-.icon-cart:hover{
-    cursor: pointer;
-}
 
-.Barra{
-	background-color: dimgrey;
-	width: 100%;
+productsListollarroc.addEventListener('click', e => {
+	intolistener(e);
 	
-	height: auto;
-   
-   
+})
+
+productsListcafete.addEventListener('click', e => {
+	intolistener(e);
 	
-	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-	font-size: 70px;
-	color: white;
-	align-content: center;
-	text-align: center;
-	text-decoration-line:underline;
-}
+})
 
-.btn-add-cart{
-	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
-	font-size: 150%;
-	font-weight: 100;
-	border-bottom-color: red;
+productsListcocigas.addEventListener('click', e => {
+	intolistener(e);
 	
-}
-.Subtitulos{
-	font-size: 500%;
-	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
-	color:gray;
-	font-weight: 800;
-}
+})
 
-
-.magenpro{
-	width: 100%;
-	height: 100%;
-}
-
-img{
-    max-width: 100%;
-}
-
-/* Header */
-header{
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 0 40px 0;
-}
-
-.container-icon{
-    position:relative;
-	align-items: flex-end;
-	text-align-last: right;
-}
-
-.count-products{
-    position: absolute;
-    top: 70%;
-    right: 0%;
-    background-color: #000;
-    color: #fff;
-    width: 50%;
-    height: 50%;
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    border-radius: 50%;
+productsListmesa.addEventListener('click', e => {
+	intolistener(e);
 	
-}
+})
 
-#contador-productos{
-    font-size: 400%;
-}
+productsListsilla.addEventListener('click', e => {
+	intolistener(e);
+	
+})
 
-.container-cart-products{
-    position: absolute;
-    top: 100%;
-    right: 0;
+productsListVenti.addEventListener('click', e => {
+	intolistener(e);
+	
+})
 
-    background-color: #fff;
-    width: 150%;
-    z-index: 1;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
-    border-radius: 10px;
-    
-}
-
-.cart-product{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 30px;
-
-    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
-
-}
-
-.info-cart-product{
-    display: flex;
-    justify-content: space-between;
-    flex: 0.8;
-}
-
-.titulo-producto-carrito{
-    font-size: 200px;
-}
-
-.precio-producto-carrito{
-    font-weight: 700;
-    font-size: 30px;
-    margin-left: 30%;
-}
-
-.cantidad-producto-carrito{
-    font-weight: 400;
-    font-size: 150%;
-}
-
-.icon-close{
-    width: 10%;
-    height: 10%;
-}
-
-.icon-close:hover{
-    stroke: red;
-    cursor: pointer;
-}
-
-.cart-total{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-    gap: 20px;
-}
-
-.cart-total h3{
-    font-size: 200%;
-    font-weight: 700;
-}
-
-.total-pagar{
-    font-size: 200%;
-    font-weight: 900;
-}
-
-.hidden-cart{
-    display: none;
-}
+productsListcocigascasa.addEventListener('click', e => {
+	intolistener(e);
+	
+})
 
 
+productsListplancgas.addEventListener('click', e => {
+	intolistener(e);
+	
+})
+
+productsListsmartv.addEventListener('click', e => {
+	intolistener(e);
+	
+})
+
+productsListspicat.addEventListener('click', e => {
+	intolistener(e);
+	
+})
+
+productsListninos.addEventListener('click', e => {
+	intolistener(e);
+	
+})
+
+productsListlicua.addEventListener('click', e => {
+	intolistener(e);
+	
+})
 
 
-/* Main */
-.container-items{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.item{
-    border-radius: 10px;
-}
-
-.item:hover{
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
-}
-
-.item img{
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-    transition: all .5s;
-}
-
-.item figure{
-    overflow: hidden;
-}
-
-.item:hover img{
-    transform: scale(1.2);
-}
-
-.info-product{
-    padding: 15px 30px;
-    line-height: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.price{
-    font-size: 18px;
-    font-weight: 900;
-}
-
-.info-product button{
-    border: none;
-    background: none;
-    background-color: #BB2C2E;
-    color: #fff;
-    padding: 15px 10px;
-    cursor: pointer;
-}
-
-.cart-empty{
-    padding: 20px;
-    text-align: center;
-}
+productsListlamp .addEventListener('click', e => {
+	intolistener(e);
+	
+})
 
 
-.hidden{
-    display: none;
-}
+productsListrasura .addEventListener('click', e => {
+	intolistener(e);
+	
+})
 
 
-}
+rowProduct.addEventListener('click', e => {
+	if (e.target.classList.contains('icon-close')) {
+		const product = e.target.parentElement;
+		const title = product.querySelector('p').textContent;
+
+		allProducts = allProducts.filter(
+			product => product.title !== title
+		);
+
+		console.log(allProducts);
+
+		showHTML();
+	}
+});
+
+// Funcion para mostrar  HTML
+const showHTML = () => {
+	if (!allProducts.length) {
+		cartEmpty.classList.remove('hidden');
+		rowProduct.classList.add('hidden');
+		cartTotal.classList.add('hidden');
+	} else {
+		cartEmpty.classList.add('hidden');
+		rowProduct.classList.remove('hidden');
+		cartTotal.classList.remove('hidden');
+	}
+
+	// Limpiar HTML
+	rowProduct.innerHTML = '';
+
+	let total = 0;
+	let totalOfProducts = 0;
+
+	allProducts.forEach(product => {
+		const containerProduct = document.createElement('div');
+		containerProduct.classList.add('cart-product');
+
+		containerProduct.innerHTML = `
+            <div class="info-cart-product">
+                <span class="cantidad-producto-carrito">${product.quantity}</span>
+                <p class="titulo-producto-carrito">${product.title}</p>
+                <span class="precio-producto-carrito">${product.price}</span>
+            </div>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="icon-close"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                />
+            </svg>
+        `;
+
+		rowProduct.append(containerProduct);
+
+		total =
+			total + parseInt(product.quantity * product.price.slice(2));
+		totalOfProducts = totalOfProducts + product.quantity;
+	});
+
+	valorTotal.innerText = `c$${total}`;
+	countProducts.innerText = totalOfProducts;
+};
